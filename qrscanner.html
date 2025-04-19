@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QR Code Scanner</title>
+  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    #reader {
+      width: 300px;
+      margin-bottom: 20px;
+    }
+    #result {
+      font-size: 18px;
+      color: #006400;
+      background-color: #d4fcd4;
+      padding: 10px 15px;
+      border-radius: 8px;
+      min-height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>QR Code Scanner</h1>
+  <div id="reader"></div>
+  <div><strong>Decoded Text:</strong></div>
+  <div id="result">Waiting for scan...</div>
+
+  <script>
+    const resultElement = document.getElementById('result');
+
+    function onScanSuccess(decodedText, decodedResult) {
+      resultElement.innerText = decodedText;
+    }
+
+    function onScanFailure(error) {
+      // Silent on scan failure
+    }
+
+    const html5QrCode = new Html5Qrcode("reader");
+
+    Html5Qrcode.getCameras().then(devices => {
+      if (devices && devices.length) {
+        const cameraId = devices[0].id;
+        html5QrCode.start(
+          cameraId,
+          {
+            fps: 10,
+            qrbox: 250
+          },
+          onScanSuccess,
+          onScanFailure
+        );
+      }
+    }).catch(err => {
+      resultElement.innerText = "Camera access error: " + err;
+    });
+  </script>
+</body>
+</html>
