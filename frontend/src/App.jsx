@@ -11,6 +11,7 @@ import Home from "./Component/Home";
 import Contact from "./Component/Contact";
 import DetailForm from "./Component/DetailForm";
 import QRScanner from "./Component/qr_scanner";
+import AllMedicines from "./Component/medicines";
 
 // App.jsx
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/contact" element={<Contact/>} />
           <Route path="/Detailform" element={<DetailForm />} />
           <Route path="/qr-scanner" element={<QRScanner />} />
+          <Route path="/medicines" element={<AllMedicines />} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
         

@@ -12,10 +12,10 @@ const Header = () => {
         <a href="Home" className="text-gray-600 hover:text-gray-900 hover:underline hover:decoration-purple-600">
           Home
         </a>
-        <a href="DetailForm" className="text-gray-600 hover:text-gray-900 hover:underline hover:decoration-purple-600">
-          Form
+        <a href="qr-scanner" className="text-gray-600 hover:text-gray-900 hover:underline hover:decoration-purple-600">
+          Add Medicine
         </a>
-        <a href="Explore" className="text-gray-600 hover:text-gray-900 hover:underline hover:decoration-purple-600">
+        <a href="medicines" className="text-gray-600 hover:text-gray-900 hover:underline hover:decoration-purple-600">
           Explore
         </a>
         <a href="Contact" className="text-gray-600 hover:text-gray-900 hover:underline hover:decoration-purple-600">

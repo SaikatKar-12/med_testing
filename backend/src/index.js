@@ -7,11 +7,13 @@ const ApiRoutes = require('./routes/index');
 const db=require('./models/index');
 //const city =require("./models/city");
 const {Medicine}= require('./models/index');
+const cors = require("cors");
+
 
 const setupAndStartServer = async()=>{
 
     const app=express();
-
+    app.use(cors());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
 
