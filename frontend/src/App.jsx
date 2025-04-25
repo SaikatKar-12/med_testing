@@ -12,6 +12,7 @@ import Contact from "./Component/Contact";
 import DetailForm from "./Component/DetailForm";
 import QRScanner from "./Component/qr_scanner";
 import AllMedicines from "./Component/medicines";
+import DamageChecker from "./Component/DamageCheck";
 
 // App.jsx
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path="/Detailform" element={<DetailForm />} />
           <Route path="/qr-scanner" element={<QRScanner />} />
           <Route path="/medicines" element={<AllMedicines />} />
+          <Route path="/DamageCheck" element={<DamageChecker />} />
           <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
         
